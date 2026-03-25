@@ -15,7 +15,7 @@ This is the product operating system for SatuSatu. It codifies how the product t
 | --------------------- | ---------------------------------------- |
 | **Team Size**         | ~10 engineers                            |
 | **Stage**             | Post-launch, pre-traction                |
-| **Primary Framework** | ICE + Kano                               |
+| **Primary Framework** | Explore/Exploit → ICE → Kano → Dependencies (4-layer) |
 | **Horizon Model**     | Now / Next / Later                       |
 | **Growth Focus**      | Foreign visitor acquisition & conversion |
 | **AI Philosophy**     | Simplify → Augment → Automate            |
@@ -31,6 +31,14 @@ This is the product operating system for SatuSatu. It codifies how the product t
 | **Product Designer**      | Customer journey ownership, Figma design, UX audit, design review via AI agents                  |
 | **Engineering PIC**       | Effort estimation (T-shirt sizing), dependency validation, MCP setup, technical risk assessment  |
 | **Data / Analytics**      | Metrics instrumentation, dashboard setup (OpenPanel), funnel analysis                            |
+
+### Squad Ownership
+
+| Squad      | Full Name           | Primary Domain                                          |
+|------------|---------------------|---------------------------------------------------------|
+| **PAYCOM** | Payments & Commerce | Trust signals, booking flow, payment methods, auth, homepage |
+| **CONTEX** | Content & Experience | Discovery, search, listing pages, ops tooling, reviews  |
+
 ---
 
 ## Document Conventions
@@ -42,10 +50,26 @@ This is the product operating system for SatuSatu. It codifies how the product t
 | `XS` – `XL`                         | Effort size: 1 day → 6+ weeks                                                              |
 | ICE Score                           | Impact × Confidence × Ease (each 1–10, max 1000)                                           |
 | Kano: Basic / Performance / Delight | Feature classification by user expectation                                                 |
-| Explore / Exploit                   | Strategic bet classification (March 1991)                                                  |
+| Explore / Exploit                   | James March's (1991) organizational learning model — strategic bet classification           |
 | `⚠️ AI DRAFT — PM REVIEW REQUIRED`   | All AI-generated artifacts carry this header until PM signs off                            |
 | `⚠ Inferred`                        | Data point not present in source files; reasoning provided                                 |
 | Mermaid diagrams                    | All flowcharts and graphs use Mermaid.js for portability                                   |
+
+### Glossary
+
+| Abbreviation | Definition |
+|---|---|
+| **K1** | Source document: UX Journey Map (`satusatu-ux-journey-map.md`) |
+| **K2** | Source document: Product Roadmap (`satusatu-product-roadmap.md`) |
+| **K3** | Source document: Metrics Framework (`satusatu-metrics-framework.md`) |
+| **K4** | Source document: Product Pipeline CSV (`Satusatu App - Product Pipeline.csv`) |
+| **NSM** | North Star Metric — Weekly Qualified Bookings Completed (see Page 05) |
+| **ABV** | Average Booking Value — mean IDR per confirmed transaction |
+| **CVR** | Conversion Rate — typically visit-to-booking unless otherwise specified |
+| **GMV** | Gross Merchandise Value — total revenue from confirmed bookings |
+| **PIC** | Person In Charge — the designated owner of a task or domain |
+| **ROAS** | Return on Ad Spend |
+| **OTA** | Online Travel Agency |
 
 ---
 
@@ -58,7 +82,7 @@ This is the product operating system for SatuSatu. It codifies how the product t
 | 02  | [Strategic Framing](./02-strategic-framing.md)               | `02-strategic-framing.md`        | Explore vs. Exploit theory, initiative quadrant, ratio analysis, startup guidance |
 | 03  | [Prioritization Framework](./03-prioritization-framework.md) | `03-prioritization-framework.md` | ICE + Kano deep dive, scoring guide, worked examples, complete scoring table      |
 | 04  | [Dependency Graph](./04-dependency-graph.md)                 | `04-dependency-graph.md`         | Trust / Conversion / Discovery chains, squad coding, sequencing rationale         |
-| 05  | [North Star & Metrics](./05-north-star-metrics.md)           | `05-north-star-metrics.md`       | NSM, 18 leading + 9 lagging indicators, counter-metrics, PM review ritual         |
+| 05  | [North Star & Metrics](./05-north-star-metrics.md)           | `05-north-star-metrics.md`       | NSM, 14 must-have + 11 nice-to-have metrics, counter-metrics, PM review ritual    |
 | 06  | [Risk & Trade-off Analysis](./06-risk-analysis.md)           | `06-risk-analysis.md`            | Pre-PRD risk gate, RACI template, completed analyses for top initiatives          |
 | 07  | [AI-Assisted Development](./07-ai-assisted-development.md)   | `07-ai-assisted-development.md`  | 6-stage PM workflow with AI, agent skills, MCP servers, tool standards            |
 | 08  | [Backlog Tracker](./08-backlog-tracker-guide.md)             | `08-backlog-tracker.csv`         | Full backlog with ICE/Kano/Horizon columns + Google Sheets guide                  |

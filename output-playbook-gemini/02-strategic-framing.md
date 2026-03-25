@@ -20,7 +20,7 @@ James March's seminal model frames all organizational activity as a balance betw
 - **Over-exploit risk**: Polishing the domestic booking flow without building foreign trust infrastructure = optimizing a product that foreigners never see
 - **Over-explore risk**: Launching Korean localization, loyalty programs, and WhatsApp booking before fixing the checkout flow = pouring new users into a leaky funnel
 
-> **The Answer**: Staged rebalancing. **Fix-to-convert now, then explore-to-grow.** A 5% improvement in checkout conversion from foreign visitors creates more GBV than a new language market with the same broken checkout flow.
+> **The Answer**: Staged rebalancing. **Fix-to-convert now, then explore-to-grow.** A 5% improvement in checkout conversion from foreign visitors creates more GMV than a new language market with the same broken checkout flow.
 
 ---
 
@@ -82,10 +82,9 @@ Unproven for SatuSatu. Uncertain ROI. Require validation before full commitment.
 | I8n Payment (incl. 2C2P integration)   | K4      | PAYCOM | Localization | Delight     | On Dev        | New payment gateway, uncertain adoption                        |
 | Korean + Hindi UI localization         | K2      | —      | Localization | Delight     | LATER         | Full i18n is expensive; language may not be the barrier        |
 | Mandarin UI localization               | K2      | —      | Localization | Delight     | LATER         | Chinese market dominated by Trip.com                           |
-| SEO destination landing pages          | K2 + K4 | CONTEX | Discovery    | Performance | Design        | Keyword competition from Klook/GYG/Viator                      |
 | Implement locale dan hreflang di blog  | K4      | CONTEX | Discovery    | —           | To Prioritize | i18n infra required                                            |
 | Destination page                       | K4      | CONTEX | Discovery    | Performance | Design        | SEO effectiveness unproven                                     |
-| Autocomplete + advanced search filters | K2 + K4 | CONTEX | Discovery    | Performance | On Dev        | Engineering complexity (M)                                     |
+| Autocomplete + Search Filters          | K2 + K4 | CONTEX | Discovery    | Performance | On Dev        | Engineering complexity (M)                                     |
 | Discover Filter & Sort                 | K4      | CONTEX | Discovery    | Performance | On Dev        | Same as above                                                  |
 
 ### EXPLORE — Strategic Bets (Large Investment, Potential Differentiation)
@@ -97,7 +96,6 @@ High-risk, high-reward. Only pursue once Exploit base is stable.
 | Loyalty / credits program              | K2     | Retention  | Delight     | LATER         | XL effort; needs transaction volume to design correctly |
 | Referral program                       | K2     | Retention  | Delight     | NEXT          | Uncertain LTV from referred users                       |
 | WhatsApp-native booking flow           | K2     | Conversion | Delight     | LATER         | Experimental channel; L effort                          |
-| Curated editorial Bali guides          | K2     | Discovery  | Delight     | NEXT          | Ongoing content ops cost                                |
 | Implement llms.txt (one off)           | K4     | Discovery  | —           | Released      | Novel AI/SEO experiment                                 |
 | Implement llms.txt (dynamic)           | K4     | Discovery  | —           | —             | Ongoing AI infrastructure                               |
 | Post-experience email + review request | K2     | Retention  | Performance | NEXT          | New retention mechanic                                  |
@@ -125,12 +123,10 @@ quadrantChart
     "Curated Badge Enhance": [0.2, 0.78]
     "Pre-activity Emails": [0.18, 0.72]
     "External Review": [0.22, 0.7]
-    "SEO Landing Pages": [0.65, 0.85]
+    "Autocomplete/Filters": [0.55, 0.7]
     "Korean/Hindi i18n": [0.75, 0.82]
     "Loyalty Credits": [0.85, 0.88]
     "Referral Program": [0.7, 0.75]
-    "Autocomplete/Filters": [0.55, 0.7]
-    "Editorial Guides": [0.65, 0.65]
     "Mandarin i18n": [0.8, 0.72]
     "WhatsApp Booking": [0.82, 0.5]
     "Homepage Improvements": [0.1, 0.4]
@@ -164,7 +160,7 @@ pie title "Target Sprint Allocation (Next 6 Months)"
 | Allocation      | What It Means                                                                                                                                          | Examples                                                                                       |
 | --------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------ | ---------------------------------------------------------------------------------------------- |
 | **70% Exploit** | Fix the funnel: trust signals, payment methods, search quality, auth friction. Table-stakes features where competitors have proved the pattern. | Free cancel badge, SSO, Google/Apple Pay, Locally Curated badge enhancement, pre-activity emails |
-| **30% Explore** | Run **one** high-conviction new-market bet as a contained spike. Do not scatter exploration across three markets simultaneously.                       | SEO landing pages OR Korean/Hindi localization — not both in the same quarter                  |
+| **30% Explore** | Run **one** high-conviction new-market bet as a contained spike. Do not scatter exploration across three markets simultaneously.                       | Destination pages OR Korean/Hindi localization — not both in the same quarter                  |
 
 ### Startup Stage Ratios — Where SatuSatu Sits
 
@@ -204,3 +200,34 @@ For a **~10 engineer team**, the opportunity cost of exploration is disproportio
 
 > **The math is clear**: Exploit first, Explore second. The funnel multiplies the value of every subsequent investment.
 
+---
+
+## How Explore/Exploit Connects to the 4-Layer Model
+
+Explore/Exploit is **Layer 1** of a four-layer prioritization model. It sets the strategic budget — but it doesn't answer "what do we build first?", "will users leave without this?", or "is this blocked by a dependency?" That's where Layers 2–4 come in.
+
+```mermaid
+flowchart TD
+    L1["Explore / Exploit<br/>How do we allocate?"]
+    L2["ICE Scoring<br/>In what order?"]
+    L3["Kano Classification<br/>Any guardrails?"]
+    L4["Dependency Pillars<br/>Can we build it now?"]
+    OUT["Sprint Commitment"]
+
+    L1 --> L2 --> L3 --> L4 --> OUT
+
+    style L1 fill:#2563EB,color:#fff
+    style L2 fill:#F59E0B,color:#000
+    style L3 fill:#DC2626,color:#fff
+    style L4 fill:#7C3AED,color:#fff
+    style OUT fill:#16A34A,color:#fff
+```
+
+| Layer | What It Does | Without It |
+|---|---|---|
+| **Explore/Exploit** | Sets the 70/30 budget split | Team either stagnates (100% Exploit) or scatters (too much Explore) |
+| **ICE** | Ranks initiatives within each bucket by score | Everything feels equally important; PM picks by gut |
+| **Kano** | Overrides ICE when a Basic feature scores low | "Boring" must-haves get deprioritized vs. "exciting" nice-to-haves |
+| **Dependency Pillars** | Checks if prerequisites exist before committing | Team starts items blocked by unshipped dependencies |
+
+> **Read next**: [Page 03 — Prioritization Framework](./03-prioritization-framework.md) for ICE+Kano, then [Page 04 — Dependency Graph](./04-dependency-graph.md) for sequencing.
