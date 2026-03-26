@@ -18,7 +18,7 @@ The Backlog Tracker is a **Google Sheet** that serves as the single source of tr
 |---|---|---|---|
 | **#** | Number | Auto-increment | Row ID for cross-referencing (matches Page 03 scoring table) |
 | **Initiative** | Text | Canonical name | Exact name as used across all playbook pages. Source of truth for naming. |
-| **Source** | Dropdown | `K2` / `K4` / `K2 + K4` | Which source document(s) the initiative originated from |
+| **Source** | Dropdown | `Roadmap` / `Pipeline` / `Both` | Which source document(s) the initiative originated from |
 | **Squad** | Dropdown | `PAYCOM` / `CONTEX` / `—` | Owning squad. `—` for unassigned items. |
 
 ### Scoring Columns

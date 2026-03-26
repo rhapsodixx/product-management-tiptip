@@ -1,14 +1,49 @@
 ---
 name: UI/UX Review with Scoring
-description: Screenshot-based design audit against SatuSatu's design system, scoring accessibility, consistency, trust signals, and usability.
+description: Screenshot-based design audit scoring accessibility, consistency, trust signals, and usability against product standards.
 model: claude-haiku-4
 lifecycle_stage: "4. Prototyping & Testing"
 tools: Figma MCP, Playwright MCP
+parallel: false  # Vision analysis requires holistic view of the screenshot — splitting dimensions loses cross-dimension context (e.g., trust signal placement affects CTA clarity)
+---
+
+## Embedded Context
+
+This skill is self-contained. All referenced frameworks are embedded below.
+
+### Customer Journey Stages
+| # | Stage | User Goal | UI Implication |
+|---|---|---|---|
+| 1 | Inspiration | Discover activities | Hero imagery, curated sections, editorial content |
+| 2 | Research | Compare options, read reviews | Search/filter, listing cards, review display |
+| 3 | Evaluation | Trust audit | Badges, social proof, cancellation policy, "is this legit?" signals |
+| 4 | Booking | Complete transaction | CTA clarity, payment methods, price transparency, guest checkout |
+| 5 | Pre-Experience | Logistics & reassurance | Confirmation details, maps, operator contact, reminders |
+| 6 | Post-Experience | Review & return | Review prompts, loyalty hooks, referral flows |
+
+### Trust Signal Checklist (must be visible on relevant pages)
+| Signal | Where Expected | Priority |
+|---|---|---|
+| Free Cancellation Badge | Listing card + detail page + checkout | P0 |
+| Locally Curated / Verified Badge | Listing card + detail page | P1 |
+| Star Rating + Review Count | Listing card + detail page | P1 |
+| Social Proof Counter ("X booked") | Homepage + listing detail | P1 |
+| Review Nationality Flags | Detail page (when shipped) | P2 |
+| Operator Verification Badge | Detail page | P2 |
+
+### Primary Persona
+- **Who**: Foreign leisure traveler (India, China, South Korea, Australia), age 28–42
+- **Device**: Mobile-first (375px primary viewport)
+- **Core anxiety**: "Is this platform safe? Will my money be protected?"
+
+### Approved Design Tools
+Figma only. No Sketch, no Adobe XD.
+
 ---
 
 ## Purpose
 
-Provides structured design review by scoring UI screenshots or Figma exports against SatuSatu's UX standards and the customer journey requirements (Page 01). Catches trust signal gaps, accessibility issues, and consistency problems before engineering builds the wrong thing.
+Provides structured design review by scoring UI screenshots or Figma exports against UX standards and customer journey requirements. Catches trust signal gaps, accessibility issues, and consistency problems before engineering builds the wrong thing.
 
 Uses Claude Haiku 4 for vision analysis — optimized for image input with fast, structured responses.
 
@@ -16,7 +51,7 @@ Uses Claude Haiku 4 for vision analysis — optimized for image input with fast,
 
 - **Screenshots** — PNG/JPG of the UI being reviewed (desktop and/or mobile)
 - **Figma export** — Via Figma MCP (Dev Mode), pull design data directly
-- **Context** — Which journey stage (Page 01) and initiative (Page 03) this UI belongs to
+- **Context** — Which journey stage and initiative this UI belongs to
 - **Device target** — Desktop, mobile, or both
 
 ## Output
@@ -37,7 +72,7 @@ Uses Claude Haiku 4 for vision analysis — optimized for image input with fast,
 
 | Dimension | Weight | What to Check |
 |---|---|---|
-| **Trust Signals** | 25% | Is the cancellation badge visible? Social proof counter? Verified operator badge? Review ratings? (Reference Page 04 Trust chain) |
+| **Trust Signals** | 25% | Is the cancellation badge visible? Social proof counter? Verified badge? Review ratings? (Use Trust Signal Checklist above) |
 | **CTA Clarity** | 20% | Is the primary action obvious? Is there exactly one CTA per viewport? Is it labeled with action verbs? |
 | **Information Architecture** | 20% | Is pricing transparent (all-inclusive)? Are essential details (date, time, meeting point) visible without scrolling? |
 | **Mobile Responsiveness** | 20% | Does the layout work at 375px width? Are tap targets ≥ 44px? Is text readable without zooming? |
@@ -49,17 +84,17 @@ Uses Claude Haiku 4 for vision analysis — optimized for image input with fast,
 ## Constraints
 
 - All outputs must begin with `⚠️ AI DRAFT — PM REVIEW REQUIRED`
-- Trust signals scoring MUST reference the specific items from Page 04's Trust chain
-- Do NOT suggest tools outside SatuSatu's approved stack (Page 00) — e.g., no Sketch, no Adobe XD
+- Trust signals scoring MUST reference the specific items from the Trust Signal Checklist (see Embedded Context)
+- Do NOT suggest tools outside the approved stack — e.g., no Sketch, no Adobe XD
 - Use Claude Haiku 4 for this skill (vision-optimized, fast structured responses)
 - Mobile review is mandatory — if only desktop screenshot is provided, flag mobile review as incomplete
 
 ## How to Use
 
 1. Take screenshots of the UI or export from Figma
-2. Open Claude Code in the playbook directory
+2. Open Claude Code in any directory
 3. Say: `Use the uiux-review skill to score this checkout page design. This is for [initiative name] at the [journey stage] stage.`
-4. Attach screenshot(s)
+4. Attach screenshot(s) — both mobile (375px) and desktop (1280px) recommended
 5. Review the scorecard with your designer — prioritize dimensions scoring below 6
 
 ## Example
@@ -72,7 +107,7 @@ Uses Claude Haiku 4 for vision analysis — optimized for image input with fast,
 ⚠️ AI DRAFT — PM REVIEW REQUIRED
 
 ## UI/UX Scorecard: Listing Detail Page (Mobile)
-**Initiative**: Free Cancellation Badge (#1, P0) · **Journey Stage**: Planning/Booking
+**Initiative**: Free Cancellation Badge (#1, P0) · **Journey Stage**: Evaluation/Booking
 
 | Dimension | Score | Feedback |
 |---|---|---|

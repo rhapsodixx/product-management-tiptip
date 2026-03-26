@@ -59,10 +59,7 @@ This is the product operating system for SatuSatu. It codifies how the product t
 
 | Abbreviation | Definition |
 |---|---|
-| **K1** | Source document: UX Journey Map (`satusatu-ux-journey-map.md`) |
-| **K2** | Source document: Product Roadmap (`satusatu-product-roadmap.md`) |
-| **K3** | Source document: Metrics Framework (`satusatu-metrics-framework.md`) |
-| **K4** | Source document: Product Pipeline CSV (`Satusatu App - Product Pipeline.csv`) |
+
 | **NSM** | North Star Metric — Weekly Qualified Bookings Completed (see Page 05) |
 | **ABV** | Average Booking Value — mean IDR per confirmed transaction |
 | **CVR** | Conversion Rate — typically visit-to-booking unless otherwise specified |

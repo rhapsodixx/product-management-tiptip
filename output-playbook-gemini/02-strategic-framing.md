@@ -26,7 +26,7 @@ James March's seminal model frames all organizational activity as a balance betw
 
 ## Explore/Exploit Quadrant — All SatuSatu Initiatives
 
-> Every initiative from both K2 (product roadmap) and K4 (product pipeline CSV) classified by uncertainty and strategic intent.
+> Every initiative from both the product roadmap and product pipeline classified by uncertainty and strategic intent.
 
 ### EXPLOIT — High Certainty (Proven Patterns)
 
@@ -143,11 +143,11 @@ quadrantChart
 
 | Layer                          | Explore            | Exploit            | Ratio     | Assessment                                        |
 | ------------------------------ | ------------------ | ------------------ | --------- | ------------------------------------------------- |
-| K2 — Strategic Roadmap         | 10 items (58%)     | 7 items (42%)      | 58/42     | ⚠ Over-exploring at the strategic level           |
-| K4 — Tactical Backlog          | 10 items (28%)     | 25 items (72%)     | 28/72     | ✅ Healthy — team instinctively builds Exploit     |
+| Strategic Roadmap              | 10 items (58%)     | 7 items (42%)      | 58/42     | ⚠ Over-exploring at the strategic level           |
+| Tactical Backlog               | 10 items (28%)     | 25 items (72%)     | 28/72     | ✅ Healthy — team instinctively builds Exploit     |
 | **Combined (All Active Work)** | **20 items (36%)** | **32 items (64%)** | **36/64** | ⚠ Close to target, but explore is still above 30% |
 
-> **Key Insight**: The tactical backlog (K4) is **naturally correcting** the strategic over-exploration in K2. The team instinctively builds Exploit features (homepage, auth, booking flow, ops) while the roadmap document emphasizes Explore (localization, loyalty). This is actually good — the team should **formalize this instinct into policy**.
+> **Key Insight**: The tactical backlog is **naturally correcting** the strategic over-exploration in the roadmap. The team instinctively builds Exploit features (homepage, auth, booking flow, ops) while the roadmap document emphasizes Explore (localization, loyalty). This is actually good — the team should **formalize this instinct into policy**.
 
 ### Recommended Ratio (Next 6 Months)
 

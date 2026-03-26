@@ -13,8 +13,8 @@ Score the attached PRD against SatuSatu's 7-dimension rubric. Each dimension is 
 ## Pre-Check (Non-Negotiable Gate)
 
 Before scoring, verify:
-1. Does the PRD reference a completed Risk & Trade-off Analysis (Page 06)?
-   - If NO → Output: `⛔ BLOCKED: Complete Page 06 Risk Analysis before PRD review.` and stop.
+1. Does the PRD reference a completed Risk & Trade-off Analysis?
+   - If NO → Output: `⛔ BLOCKED: Complete Risk & Trade-off Analysis before PRD review. Use the risk-analysis skill.` and stop.
 2. Is the initiative in the NOW or NEXT horizon?
    - If LATER → Output: `⚠️ LATER initiatives do not require full PRD review. Use lightweight brief instead.`
 
@@ -23,7 +23,7 @@ Before scoring, verify:
 Score each dimension 0–100:
 
 ### 1. Problem Statement (15%)
-- 90–100: Specific pain point, tied to journey stage (Page 01), with data
+- 90–100: Specific pain point, tied to a journey stage (Inspiration/Research/Evaluation/Booking/Pre-Experience/Post-Experience), with data
 - 70–89: Clear but missing data or journey stage mapping
 - 50–69: Vague, could apply to any product
 - <50: Missing or generic
@@ -41,21 +41,21 @@ Score each dimension 0–100:
 - <50: Missing or completely subjective
 
 ### 4. Success Metrics (15%)
-- 90–100: Tied to NSM or Must-Have metrics (Page 05), measurement plan specified, counter-metric included
+- 90–100: Tied to NSM (Weekly Qualified Bookings) or Must-Have metrics (Checkout Initiation Rate, Booking Completion Rate, Cancellation Rate, D7 Return Visit Rate, etc.), measurement plan specified, counter-metric included
 - 70–89: Correct metrics but no measurement plan
-- 50–69: Metrics mentioned but not from Page 05 framework
+- 50–69: Metrics mentioned but not from the Must-Have metrics framework
 - <50: No metrics or vanity metrics only
 
 ### 5. Dependencies (10%)
-- 90–100: Cross-referenced with Page 04 chains, Blocked By clearly stated, ripple effects noted
-- 70–89: Dependencies listed but not cross-referenced with Page 04
+- 90–100: Cross-referenced with dependency chains (Trust/Conversion/Discovery pillars), Blocked By clearly stated, ripple effects noted
+- 70–89: Dependencies listed but not cross-referenced with pillar chains
 - 50–69: "No dependencies" stated without verification
 - <50: Not addressed
 
 ### 6. Risk Acknowledgment (10%)
-- 90–100: References Page 06 analysis, mitigations documented, worst-case scenario planned
+- 90–100: References the completed Risk & Trade-off Analysis, mitigations documented, worst-case scenario planned
 - 70–89: References analysis but mitigations are vague
-- 50–69: Mentions risks but no Page 06 reference
+- 50–69: Mentions risks but no Risk Analysis reference
 - <50: No risk discussion
 
 ### 7. Technical Feasibility (10%)

@@ -144,7 +144,7 @@ flowchart LR
 | -------------- | ----------------------------------------------------------------------------------------------------------------- | ----- |
 | **Kano**       | Klook, GYG, KKday all offer guest checkout. Foreign one-time travelers expect it. **Basic.**                      | —     |
 | **Impact**     | Mandatory registration is the #1 documented checkout abandoner for foreign one-time visitors. Direct NSM blocker. | **9** |
-| **Confidence** | Every OTA competitor has validated this. K1 UX research identifies it as a pain point.                            | **9** |
+| **Confidence** | Every OTA competitor has validated this. UX research identifies it as a pain point.                               | **9** |
 | **Ease**       | SSO Phase 1 is in testing (K4). Full guest checkout requires auth architecture changes. Effort = L.               | **5** |
 | **ICE Score**  | 9 × 9 × 5 = **405**                                                                                               | P1    |
 
@@ -154,7 +154,7 @@ flowchart LR
 
 ## Complete Scoring Table
 
-> All initiatives from K2 (product roadmap) and K4 (product pipeline). Released items are scored for completeness but marked as shipped.
+> All initiatives from the product roadmap and product pipeline. Released items are scored for completeness but marked as shipped.
 
 ### P0 — Critical & Urgent (ICE ≥ 700)
 

@@ -34,7 +34,7 @@ For each competitor, check:
 
 ### [Competitor Name]
 - 🆕 **[New Feature]** — [Description]
-  - Kano Impact: [Which SatuSatu initiative is affected? Name + # from Page 03. Classification shift?]
+  - Kano Impact: [Which initiative is affected? Name + # from backlog. Classification shift?]
   - Threat Level: [Low / Medium / High]
 - 🔄 **[Changed Feature]** — [What changed]
   - Kano Impact: [Assessment]
@@ -50,5 +50,5 @@ For each competitor, check:
 
 ## Constraints
 - Activities/experiences vertical only — ignore flights, hotels, trains
-- Reference SatuSatu backlog items by name and number from Page 03
+- Reference backlog items by name and number (if backlog data is provided)
 - Kano reclassification: a feature becomes Basic when 2+ major competitors have shipped it

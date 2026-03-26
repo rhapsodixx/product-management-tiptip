@@ -1,6 +1,6 @@
 # 01 — Customer Journey Map
 
-> **Source**: [satusatu-ux-journey-map.md](../satusatu-ux-journey-map.md) (K1) · Cross-referenced with [Product Pipeline CSV](../Satusatu%20App%20-%20Product%20Planning%20-%20Product%20Pipeline.csv) (K4)
+> **Source**: [satusatu-ux-journey-map.md](../satusatu-ux-journey-map.md) · Cross-referenced with [Product Pipeline CSV](../Satusatu%20App%20-%20Product%20Planning%20-%20Product%20Pipeline.csv)
 
 ---
 
@@ -182,13 +182,13 @@ xychart-beta
 
 > *Completing a transaction on SatuSatu.com on mobile*
 
-| Dimension       | Detail                                                                                                                              |
-| --------------- | ----------------------------------------------------------------------------------------------------------------------------------- |
-| **Emotion**     | 😐 Cautious (account) · 😊 Relieved if confirmed                                                                                     |
-| **User Goal**   | Complete payment quickly and confidently; receive clear confirmation                                                                |
-| **Touchpoints** | Listing detail page · Account creation flow · Payment gateway · Confirmation email · WhatsApp support                               |
-| **Actions**     | Selects date + package → Hits "Book Now" → Forced to create account → Fills details → Chooses payment → Completes                   |
-| **User Quote**  | *"I have to create an account just to book? And I can't pay with Google Pay?"*                                                     |
+| Dimension       | Detail                                                                                                            |
+| --------------- | ----------------------------------------------------------------------------------------------------------------- |
+| **Emotion**     | 😐 Cautious (account) · 😊 Relieved if confirmed                                                                    |
+| **User Goal**   | Complete payment quickly and confidently; receive clear confirmation                                              |
+| **Touchpoints** | Listing detail page · Account creation flow · Payment gateway · Confirmation email · WhatsApp support             |
+| **Actions**     | Selects date + package → Hits "Book Now" → Forced to create account → Fills details → Chooses payment → Completes |
+| **User Quote**  | *"I have to create an account just to book? And I can't pay with Google Pay?"*                                    |
 
 **Pain Points**:
 - Mandatory account creation before checkout — friction barrier for one-time foreign travelers
@@ -291,20 +291,20 @@ xychart-beta
 
 ## Site Audit Summary — 9 UX Dimensions
 
-> Full audit from K1 conducted March 2026. Condensed to status counts per dimension.
+> Full audit from UX Journey Map conducted March 2026. Condensed to status counts per dimension.
 
-| UX Dimension             | ✅ Present | ⚠️ Partial | ❌ Missing | Worst Gap                                             |
-| ------------------------ | --------- | --------- | --------- | ----------------------------------------------------- |
-| Information Architecture | 2         | 1         | 2         | No destination-level hub pages                        |
-| Search & Discovery       | 2         | 1         | 3         | No autocomplete, no price/duration filters            |
-| Attraction Detail Pages  | 3         | 1         | 2         | No "What's included" checklist, no recommendations    |
-| Booking Flow             | 3         | 1         | 2         | No guest checkout, no "Pay Later"                     |
-| Trust Signals            | 2         | 1         | 3         | No operator verification, no free-cancel badge        |
-| Mobile Experience        | 2         | 1         | 2         | No QR/digital ticket optimization                     |
-| Language & Localization  | 1         | 1         | 3         | No Mandarin/Hindi/Korean, no currency localization    |
+| UX Dimension             | ✅ Present | ⚠️ Partial | ❌ Missing | Worst Gap                                                  |
+| ------------------------ | --------- | --------- | --------- | ---------------------------------------------------------- |
+| Information Architecture | 2         | 1         | 2         | No destination-level hub pages                             |
+| Search & Discovery       | 2         | 1         | 3         | No autocomplete, no price/duration filters                 |
+| Attraction Detail Pages  | 3         | 1         | 2         | No "What's included" checklist, no recommendations         |
+| Booking Flow             | 3         | 1         | 2         | No guest checkout, no "Pay Later"                          |
+| Trust Signals            | 2         | 1         | 3         | No operator verification, no free-cancel badge             |
+| Mobile Experience        | 2         | 1         | 2         | No QR/digital ticket optimization                          |
+| Language & Localization  | 1         | 1         | 3         | No Mandarin/Hindi/Korean, no currency localization         |
 | Pricing Transparency     | 2         | 1         | 2         | No "From" price on listing cards; no price-match guarantee |
-| Support & Post-Booking   | 2         | 1         | 2         | No foreign-language support, no post-experience email |
-| **Totals**               | **19**    | **9**     | **21**    | —                                                     |
+| Support & Post-Booking   | 2         | 1         | 2         | No foreign-language support, no post-experience email      |
+| **Totals**               | **19**    | **9**     | **21**    | —                                                          |
 
 > **21 missing features** vs. **19 present**. The platform is roughly half-built for the foreign visitor persona. The missing features cluster in Trust, Localization, and Discovery — exactly the pillars the NOW horizon targets.
 
@@ -320,9 +320,5 @@ xychart-beta
 | ---------------- | -------------------- | ----------------------------------------------------------------------------------------------------------------- |
 | **Klook**        | `Learn from`         | Adopt KlookCash-style loyalty credits tied to reviews; make "free cancellation" a hero badge                      |
 | **KKday**        | `Differentiate from` | Out-authenticate their "local experience" pitch with verifiable operator profiles + "Only on SatuSatu" exclusives |
-| **GetYourGuide** | `Learn from`         | Replicate "Certified" badge, Pay Later, auto-currency — top conversion blockers          |
+| **GetYourGuide** | `Learn from`         | Replicate "Certified" badge, Pay Later, auto-currency — top conversion blockers                                   |
 | **Trip.com**     | `Niche target`       | Don't compete head-to-head for Chinese travelers; focus on Indian/Korean markets where Trip.com is weakest        |
-
----
-
-*Data source: satusatu-ux-journey-map.md (UX Research · March 2026) · Cross-referenced with Satusatu App - Product Pipeline*

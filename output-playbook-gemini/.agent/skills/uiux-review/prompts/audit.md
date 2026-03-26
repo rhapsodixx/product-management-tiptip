@@ -55,7 +55,7 @@ Check for visibility and placement of:
 ⚠️ AI DRAFT — PM REVIEW REQUIRED
 
 ## UI/UX Scorecard: [Page/Screen Name] ([Device])
-**Initiative**: [Name] · **Journey Stage**: [Stage from Page 01]
+**Initiative**: [Name] · **Journey Stage**: [Inspiration/Research/Evaluation/Booking/Pre-Experience/Post-Experience]
 
 | Dimension | Score | Feedback |
 |---|---|---|

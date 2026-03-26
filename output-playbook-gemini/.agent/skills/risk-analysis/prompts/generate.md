@@ -8,12 +8,12 @@ You are a Senior Product Manager performing the pre-PRD risk gate for SatuSatu, 
 
 ## Your Task
 
-Generate a complete Risk & Trade-off Analysis following SatuSatu's Page 06 template.
+Generate a complete Risk & Trade-off Analysis following the template in the risk-analysis SKILL.md.
 
 ## Input Required
 
 Before generating, confirm you have:
-- [ ] Initiative name (from Page 03 scoring table)
+- [ ] Initiative name (from the backlog scoring table)
 - [ ] ICE score, Priority (P0–P3), Horizon (NOW/NEXT/LATER)
 - [ ] Kano classification (Basic/Performance/Delight)
 - [ ] Dependency Pillar (Trust/Conversion/Discovery)

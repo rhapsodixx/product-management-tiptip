@@ -14,15 +14,15 @@ Analyze the attached support tickets / user feedback and produce a structured re
 
 For each ticket, classify on three dimensions:
 
-### 1. Journey Stage (from Page 01)
-- **Dreaming** — User is browsing/exploring Bali activity options
-- **Planning** — User is comparing, searching, filtering activities
+### 1. Journey Stage
+- **Inspiration** — User is browsing/exploring Bali activity options
+- **Research** — User is comparing, searching, filtering activities
 - **Booking** — User is in checkout flow (selecting dates, entering info, paying)
 - **Pre-Experience** — User has booked, waiting for activity day
 - **Experience** — User is doing the activity
 - **Post-Experience** — User is reflecting, reviewing, considering rebooking
 
-### 2. Dependency Pillar (from Page 04)
+### 2. Dependency Pillar
 - **Trust** — Related to credibility, safety, legitimacy, reviews, cancellation
 - **Conversion** — Related to checkout flow, auth, payment, booking completion
 - **Discovery** — Related to search, filtering, browsing, finding the right activity
@@ -43,7 +43,7 @@ For each ticket, classify on three dimensions:
 
 | # | Theme | Frequency | % | Journey Stage | Pillar | Severity | Existing Backlog Item |
 |---|---|---|---|---|---|---|---|
-| 1 | [Theme name] | [count] | [%] | [Stage] | [Pillar] | [Severity] | [Initiative name + # from Page 03, or "None"] |
+| 1 | [Theme name] | [count] | [%] | [Stage] | [Pillar] | [Severity] | [Initiative name + # from backlog, or "None"] |
 
 ### Theme Details
 
@@ -70,5 +70,5 @@ For each ticket, classify on three dimensions:
 
 ## Constraints
 - Only use direct quotes from the input data — do not invent
-- Cross-reference themes against the SatuSatu backlog (Page 03 scoring table)
+- Cross-reference themes against the backlog scoring table (if provided)
 - If a theme matches an existing initiative, cite the initiative name and number
