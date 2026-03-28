@@ -1,7 +1,6 @@
 ---
 name: UI/UX Review with Scoring
 description: Design audit scoring accessibility, consistency, trust signals, and usability via Figma links or screenshots.
-model: claude-haiku-4
 lifecycle_stage: "4. Prototyping & Testing"
 tools: Figma MCP (get_design_context, get_metadata, get_screenshot, get_variable_defs), Playwright MCP
 parallel: true
@@ -77,8 +76,10 @@ Supports two input paths: **Figma link** (preferred — provides structural data
 
 ## Input
 
-- **Figma file link** (preferred) — URL to a Figma frame or page; agent extracts metadata, screenshot, and design tokens via Figma MCP automatically
-- **Screenshots** (fallback) — PNG/JPG for teams without Figma MCP, or for auditing the live site vs. design
+Accepts design input via two paths (auto-detected based on available MCPs and user input):
+
+- **Path A — Figma link** (preferred when Figma MCP is connected) — URL to a Figma frame or page; agent extracts metadata, screenshot, and design tokens via Figma MCP tools (`get_metadata`, `get_screenshot`, `get_variable_defs`, `get_design_context`)
+- **Path B — Screenshots / Attached images** (when Figma MCP is unavailable, or for live site audits) — PNG/JPG attached directly by the user, or captured via Playwright MCP from a live URL. This path is fully supported and produces the same scorecard — structural analysis is inferred from visual inspection instead of Figma metadata.
 - **Context** — Which journey stage and initiative this UI belongs to
 - **Device target** — Desktop, mobile, or both
 
@@ -94,10 +95,10 @@ Supports two input paths: **Figma link** (preferred — provides structural data
 
 ## Process
 
-1. **Load** — Determine input type:
-   - If Figma link provided → call `get_metadata` for structural data (component tree, sizes, positions), `get_screenshot` for visual snapshot, and `get_variable_defs` for design tokens (colors, spacing, typography)
-   - If screenshots provided → use directly for vision analysis
-   - If BOTH provided → use Figma data for structural scoring (Information Architecture, Mobile Responsiveness, Accessibility) and screenshots for visual scoring (Trust Signals, CTA Clarity)
+1. **Load** — Auto-detect input path:
+   - **If Figma MCP is available AND Figma link provided** → call `get_metadata` for structural data (component tree, sizes, positions), `get_screenshot` for visual snapshot, and `get_variable_defs` for design tokens (colors, spacing, typography). Use `get_design_context` for code-ready specs when evaluating consistency.
+   - **If screenshots / images attached** (or Figma MCP unavailable) → use attached images directly for vision analysis. If a live URL is provided instead of images, use Playwright MCP to capture screenshots at both mobile (375px) and desktop (1280px) viewports.
+   - **If BOTH Figma link AND screenshots provided** → use Figma data for structural scoring (Information Architecture, Mobile Responsiveness, Accessibility) and screenshots for visual scoring (Trust Signals, CTA Clarity)
 2. **Identify context** — Determine which journey stage and initiative this UI supports
 3. **Score** — Dispatch 3 specialist agents in parallel (see Parallel Execution below), each scoring their assigned dimensions on 0–10 scale:
 
@@ -135,15 +136,23 @@ Supports two input paths: **Figma link** (preferred — provides structural data
 - All outputs must begin with `⚠️ AI DRAFT — PM REVIEW REQUIRED`
 - Trust signals scoring MUST reference the specific items from the Trust Signal Checklist (see Embedded Context)
 - Do NOT suggest tools outside the approved stack — e.g., no Sketch, no Adobe XD
-- Use Claude Haiku 4 for this skill (vision-optimized, fast structured responses)
+- In Claude Code, use `model: "haiku"` for vision analysis subagents (vision-optimized, fast structured responses)
 - Mobile review is mandatory — if only desktop screenshot is provided, flag mobile review as incomplete
+- When Figma MCP is unavailable, explicitly note in the report: "Reviewed from screenshots — structural data (design tokens, component tree) not available. Scores for Information Architecture and Accessibility are based on visual inspection only."
 
 ## How to Use
 
-1. Get the Figma frame link (right-click frame → "Copy link") OR take screenshots at mobile (375px) and desktop (1280px)
-2. Open Claude Code in any directory (Figma MCP must be connected for link path)
+### With Figma MCP (preferred)
+1. Get the Figma frame link (right-click frame → "Copy link")
+2. Open Claude Code in the `product-management` directory (Figma MCP must be connected)
 3. Say: `Use the uiux-review skill to score this [page name]. Figma: [link]. This is for [initiative name] at the [journey stage] stage.`
-   — OR attach screenshots if not using Figma MCP
+
+### With screenshots (when Figma MCP is unavailable)
+1. Take screenshots at mobile (375px) and desktop (1280px), or provide a live URL for Playwright to capture
+2. Open Claude Code in the `product-management` directory
+3. Say: `Use the uiux-review skill to score this [page name]. This is for [initiative name] at the [journey stage] stage.` and attach the screenshots
+   — OR: `Use the uiux-review skill to audit the live page at [URL]. This is for [initiative name] at the [journey stage] stage.`
+
 4. Review the scorecard with your designer — prioritize dimensions scoring below 6
 
 ## Example

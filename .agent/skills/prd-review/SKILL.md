@@ -1,9 +1,8 @@
 ---
 name: PRD Review with Scoring
 description: Scores a Product Requirements Document against a 7-dimension rubric and provides actionable feedback with a pass/fail recommendation.
-model: claude-sonnet-4
 lifecycle_stage: "3. Definition & Documentation"
-tools: Atlassian MCP, Sequential Thinking MCP
+tools: Atlassian MCP
 parallel: true
 parallel_strategy: "2 agents — Agent 1 scores user-facing dimensions (Problem Statement, User Stories, Acceptance Criteria); Agent 2 scores system-facing dimensions (Success Metrics, Dependencies, Risk Acknowledgment, Technical Feasibility). Parent aggregates weighted total."
 ---
@@ -111,13 +110,12 @@ This skill can be split across 2 agents for faster review:
 - All outputs must begin with `⚠️ AI DRAFT — PM REVIEW REQUIRED`
 - Do NOT pass a PRD that lacks a Risk Analysis reference — this is a non-negotiable gate
 - Scoring must be strict: vague acceptance criteria = score ≤ 40 for that dimension
-- Use Claude Sonnet 4 for this skill (deep reasoning required for nuanced evaluation)
-- If using Sequential Thinking MCP, break the review into 7 reasoning steps (one per dimension)
+- In Claude Code, use `model: "sonnet"` for subagents (deep reasoning required for nuanced evaluation)
 
 ## How to Use
 
 1. Ensure a Risk & Trade-off Analysis is completed for the initiative (use the `risk-analysis` skill if needed)
-2. Open Claude Code in any directory
+2. Open Claude Code in the `product-management` directory
 3. Say: `Use the prd-review skill to score this PRD for [initiative name]. The Risk Analysis is complete.`
 4. Paste or attach the PRD (or provide the Confluence page ID if Atlassian MCP is connected)
 5. Review the scorecard — address all dimensions scoring below 60 before engineering handoff

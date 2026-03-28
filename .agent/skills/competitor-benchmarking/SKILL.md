@@ -1,9 +1,8 @@
 ---
 name: Competitor Benchmarking
 description: Monitors Klook, KKday, GetYourGuide, and Trip.com for feature changes, pricing shifts, and UX updates in the activities vertical.
-model: gemini-2.5-flash
 lifecycle_stage: "1–2. Discovery & Ideation"
-tools: Brave Search MCP, Playwright MCP, Atlassian MCP
+tools: WebSearch (built-in), Playwright MCP, Atlassian MCP
 parallel: true
 parallel_strategy: "4 agents, one per competitor (Klook, KKday, GetYourGuide, Trip.com). Each agent scans + browses its assigned competitor. Parent merges digests, deduplicates cross-competitor patterns, and generates Kano reclassification recommendations."
 ---
@@ -69,7 +68,7 @@ Provides structured competitive intelligence by monitoring OTA competitors in th
 
 ## Process
 
-1. **Scan** — Use Brave Search MCP to search for recent news, blog posts, and changelogs for each competitor
+1. **Scan** — Use WebSearch (built-in) to search for recent news, blog posts, and changelogs for each competitor
 2. **Browse** — Use Playwright MCP to visit competitor sites and capture current state of key pages (homepage, search results, listing detail, checkout)
 3. **Compare** — Against previous report (if available), identify what has changed
 4. **Classify** — For each change:
@@ -101,15 +100,16 @@ Each competitor can be scanned independently:
 - All outputs must begin with `⚠️ AI DRAFT — PM REVIEW REQUIRED`
 - Only analyze competitors in the activities/experiences vertical — ignore hotel/flight features
 - Kano reclassification suggestions must reference the specific initiative by name and its current classification
-- Use Gemini 2.5 Flash for speed (this is a recurring, high-frequency task)
+- Model preference is left to the user: use `opus` for thorough analysis or `haiku` for quick recurring scans
 - Screenshots captured via Playwright must be stored locally, not uploaded to external services
 
 ## How to Use
 
-1. Open Claude Code or Gemini in any directory
+1. Open Claude Code in the `product-management` directory
 2. Say: `Use the competitor-benchmarking skill to generate this week's competitor digest. Focus on [optional: checkout UX / trust signals / pricing].`
-3. If you want automated browsing, ensure Playwright MCP is connected
-4. Review the digest, validate Kano reclassification suggestions, and update your backlog accordingly
+3. For quick scans, add: `Use haiku for speed.` For deep analysis, add: `Use opus for thoroughness.`
+4. If you want automated browsing, ensure Playwright MCP is connected
+5. Review the digest, validate Kano reclassification suggestions, and update your backlog accordingly
 
 ## Example
 

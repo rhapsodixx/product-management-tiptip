@@ -1,6 +1,6 @@
 # Competitor Benchmarking — Weekly Scan Prompt
 
-Use this prompt with Gemini 2.5 Flash for speed. Connect Brave Search MCP and Playwright MCP for automated browsing.
+Use this prompt in Claude Code. Connect Playwright MCP for automated browsing. WebSearch (built-in) is used for web scanning. Model choice is up to the user: `opus` for thorough analysis, `haiku` for quick recurring scans.
 
 ---
 

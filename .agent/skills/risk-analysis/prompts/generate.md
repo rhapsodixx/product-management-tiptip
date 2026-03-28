@@ -1,6 +1,6 @@
 # Risk & Trade-off Analysis — Generation Prompt
 
-Use this prompt with Claude Sonnet 4. Provide initiative context as input.
+Use this prompt in Claude Code with `model: "sonnet"`. Provide initiative context as input.
 
 ---
 

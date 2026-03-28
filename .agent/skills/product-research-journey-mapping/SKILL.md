@@ -1,9 +1,8 @@
 ---
 name: Product Research & Journey Mapping
 description: Analyzes support tickets, user feedback, and market data to identify themes, pain points, and opportunities mapped to the customer journey.
-model: gemini-2.5-pro
 lifecycle_stage: "1. Discovery & Research"
-tools: NotebookLM MCP, Brave Search MCP, Atlassian MCP, Sequential Thinking MCP
+tools: NotebookLM MCP, WebSearch (built-in), Atlassian MCP
 parallel: true
 parallel_strategy: "Up to 6 agents by journey stage — each agent categorizes and clusters tickets for one stage (Inspiration, Research, Evaluation, Booking, Pre-Experience, Post-Experience). Parent merges results, deduplicates cross-stage themes, and generates final report."
 ---
@@ -96,14 +95,14 @@ When analyzing large datasets (200+ tickets), split by journey stage:
 - Do NOT invent user quotes — only use direct text from the input data
 - Do NOT recommend tools outside the approved stack (see Embedded Context)
 - Severity classification must be falsifiable — provide the specific user action that was blocked or degraded
-- Use Gemini 2.5 Pro for this skill (large context window needed for 200+ tickets)
+- For large datasets (200+ tickets), use NotebookLM MCP if available; otherwise chunk the data and process via subagents
 
 ## How to Use
 
 1. Export support tickets or user feedback into a CSV or text file
-2. Open Claude Code or Gemini in any directory
+2. Open Claude Code in the `product-management` directory
 3. Say: `Use the product-research-journey-mapping skill to analyze these [N] support tickets. Focus on [optional: specific journey stage or pillar].`
-4. Attach the data file(s)
+4. Attach the data file(s) — or provide a NotebookLM notebook link if the data is already loaded there
 5. Review the AI draft, validate theme classifications against your domain knowledge, and refine
 
 ## Example

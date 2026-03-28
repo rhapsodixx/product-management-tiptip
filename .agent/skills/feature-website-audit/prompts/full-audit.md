@@ -1,6 +1,6 @@
 # Feature & Website Audit — Full Audit Prompt
 
-Use this prompt with Claude Haiku 4 (vision) + Playwright MCP for automated browsing.
+Use this prompt in Claude Code with Playwright MCP for automated browsing. Use `model: "haiku"` for vision analysis subagents.
 
 ---
 

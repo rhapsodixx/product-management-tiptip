@@ -1,7 +1,6 @@
 ---
 name: Feature & Website Audit
 description: Periodic automated UX audit of the live site against customer journey criteria and trust signal checklist using Playwright browser automation.
-model: claude-haiku-4
 lifecycle_stage: "5–6. Execution & Post-Launch"
 tools: Playwright MCP, Atlassian MCP
 parallel: false  # Playwright browser sessions are sequential by nature — each page navigation depends on the previous state. Parallelizing would require separate browser instances with duplicated setup cost.
@@ -99,16 +98,17 @@ Runs a structured UX audit of the live site to catch regressions, broken flows, 
 - All outputs must begin with `⚠️ AI DRAFT — PM REVIEW REQUIRED`
 - Use Playwright MCP for all browser interactions — do not use external browser automation tools
 - Audit must test at mobile viewport (375px) in addition to desktop (1280px)
-- Use Claude Haiku 4 for vision analysis of captured screenshots
+- In Claude Code, use `model: "haiku"` for vision analysis subagents on captured screenshots
 - Do not test with real payment credentials — stop at payment method selection
 - Screenshots must be stored locally, not uploaded externally
 
 ## How to Use
 
 1. Ensure Playwright MCP is connected in your Claude Code session
-2. Say: `Use the feature-website-audit skill to run a full UX audit of [site URL]. Compare against last week's report.`
-3. For a targeted audit: `Use the feature-website-audit skill to verify that Free Cancellation Badge is live on listing detail pages.`
-4. Review the report with your designer and engineering PIC — file Jira tickets for regressions
+2. Open Claude Code in the `product-management` directory
+3. Say: `Use the feature-website-audit skill to run a full UX audit of [site URL]. Compare against last week's report.`
+4. For a targeted audit: `Use the feature-website-audit skill to verify that Free Cancellation Badge is live on listing detail pages.`
+5. Review the report with your designer and engineering PIC — file Jira tickets for regressions
 
 ## Example
 

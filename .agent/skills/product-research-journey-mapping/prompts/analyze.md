@@ -1,6 +1,6 @@
 # Product Research — Analysis Prompt
 
-Use this prompt with Gemini 2.5 Pro (large context) or Claude Sonnet 4. Attach support ticket data as input.
+Use this prompt in Claude Code. For large datasets, use NotebookLM MCP if available; otherwise attach data files directly. Use `model: "sonnet"` for analysis subagents.
 
 ---
 

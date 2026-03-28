@@ -1,6 +1,6 @@
 # PRD Review — Scoring Prompt
 
-Use this prompt with Claude Sonnet 4. Attach the draft PRD as input.
+Use this prompt in Claude Code with `model: "sonnet"` for subagents. Attach the draft PRD as input.
 
 ---
 

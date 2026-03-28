@@ -1,6 +1,6 @@
 # UI/UX Review — Design Audit Prompt
 
-Use this prompt with Claude Haiku 4 (vision). Provide Figma link or attach screenshot(s).
+Use this prompt in Claude Code with `model: "haiku"` for vision analysis subagents. Provide Figma link (if Figma MCP is connected) or attach screenshot(s) / provide a live URL for Playwright to capture.
 
 ---
 

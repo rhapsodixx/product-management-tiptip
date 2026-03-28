@@ -1,9 +1,8 @@
 ---
 name: Risk & Trade-off Analysis
 description: Auto-generates risk analysis tables from initiative briefs, including assumptions, failure modes, validation approaches, and RACI assignments.
-model: claude-sonnet-4
 lifecycle_stage: "3. Definition & 6. Post-Launch"
-tools: Atlassian MCP, Sequential Thinking MCP
+tools: Atlassian MCP
 parallel: false  # Sequential reasoning required — each section builds on the previous (assumptions → risks → validation → RACI)
 ---
 
@@ -104,7 +103,7 @@ Also used post-launch (Stage 6) to generate retrospective risk assessments based
 ## Process
 
 1. **Context** — Load the initiative's full context from the user-provided brief and any attached backlog/dependency data
-2. **Assumptions** — Use Sequential Thinking MCP to reason through: "What must be true for this initiative to deliver its claimed impact?" Generate 2–3 specific, falsifiable statements
+2. **Assumptions** — Reason step-by-step through: "What must be true for this initiative to deliver its claimed impact?" Generate 2–3 specific, falsifiable statements
 3. **Risks** — Identify the two most likely failure modes:
    - Risk 1: What goes wrong for the USER? (behavioral/UX risk)
    - Risk 2: What goes wrong for the TEAM? (technical/operational/business risk)
@@ -122,13 +121,13 @@ Also used post-launch (Stage 6) to generate retrospective risk assessments based
 - Assumptions must be FALSIFIABLE — not "users will like it" but "users will click the badge at a rate >5%"
 - Validation approach must be the CHEAPEST test — prefer analytics over A/B, A/B over user study, user study over full build
 - RACI must have exactly ONE "A" (Accountable) per initiative
-- Use Claude Sonnet 4 for this skill (deep reasoning for nuanced risk identification)
+- In Claude Code, use `model: "sonnet"` for this skill (deep reasoning for nuanced risk identification)
 - Risk categories should differ — if Risk 1 is behavioral, Risk 2 should be technical or operational
 
 ## How to Use
 
 1. Gather the initiative context: name, ICE score, Kano class, priority, horizon, pillar, effort, dependencies
-2. Open Claude Code in any directory
+2. Open Claude Code in the `product-management` directory
 3. Say: `Use the risk-analysis skill to generate a risk analysis for [initiative name]. ICE: [score], Kano: [class], Priority: [P0-P3], Pillar: [Trust/Conversion/Discovery], Effort: [XS-XL].`
 4. Add a brief description of the initiative and any known dependencies
 5. Review the AI draft — validate assumptions against your domain knowledge, fill in RACI names
