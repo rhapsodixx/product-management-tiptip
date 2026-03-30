@@ -135,66 +135,7 @@ Track alongside NSM to prevent hollow growth. Each counter-metric is already cap
 
 How leading metrics flow into lagging outcomes and ultimately the NSM.
 
-```mermaid
-flowchart TD
-    subgraph "Layer 1 — Acquisition"
-        A1["Paid Ad CTR<br/>(GA4)"]
-        A2["Branded Search Vol<br/>(GA4 + Search Console)"]
-        A3["Landing Bounce Rate ↑<br/>(GA4) ⚠ Negative"]
-    end
-
-    subgraph "Layer 2 — Activation"
-        B1["Activation Rate<br/>(OpenPanel)"]
-    end
-
-    subgraph "Layer 3 — Discovery"
-        C1["Search-to-Catalog CTR<br/>(OpenPanel)"]
-        C2["Catalog Engagement<br/>Depth (OpenPanel)"]
-        C3["Zero-Result Rate ↑<br/>(OpenPanel) ⚠ Negative"]
-    end
-
-    subgraph "Layer 4 — Intent"
-        D1["Checkout Initiation<br/>Rate (OpenPanel)"]
-        D2["Payment Abandonment ↑<br/>(OpenPanel) ⚠ Negative"]
-    end
-
-    subgraph "Layer 5 — North Star"
-        E1["★ Weekly Qualified<br/>Bookings Completed"]
-    end
-
-    subgraph "Layer 6 — Retention"
-        F1["D7 Return Visit Rate<br/>(OpenPanel)"]
-        F2["30-Day Repeat<br/>Booking Rate (OpenPanel)"]
-    end
-
-    subgraph "Layer 7 — Outcomes"
-        G1["Revenue<br/>(OpenPanel + Data Team)"]
-        G2["Avg Booking Value<br/>(OpenPanel + Data Team)"]
-    end
-
-    A1 --> B1
-    A2 --> B1
-    A3 -.->|"Negative"| B1
-    B1 --> C1
-    B1 --> C2
-    C3 -.->|"Negative"| C1
-    C1 --> D1
-    C2 --> D1
-    D1 --> E1
-    D2 -.->|"Negative"| E1
-    E1 --> F1
-    F1 --> F2
-    E1 --> G2
-    F2 --> G1
-    G2 --> G1
-
-    style E1 fill:#7C3AED,color:#fff
-    style A3 fill:#FEE2E2,color:#991B1B
-    style C3 fill:#FEE2E2,color:#991B1B
-    style D2 fill:#FEE2E2,color:#991B1B
-    style G1 fill:#FEF3C7,color:#92400E
-    style G2 fill:#FEF3C7,color:#92400E
-```
+![Mermaid Chart](../asset/05-north-star-metrics_0.png)
 
 ### Reading the Map
 

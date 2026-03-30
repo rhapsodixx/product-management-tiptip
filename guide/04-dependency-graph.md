@@ -6,22 +6,7 @@ The first three layers (Explore/Exploit → ICE → Kano) answer **what** to bui
 
 A P1 item might depend on a P2 item that hasn't shipped yet. ICE says "build the P1 first," but the dependency says "you can't." Without a sequencing layer, the team picks the highest-scoring item, starts building, and discovers mid-sprint it's blocked.
 
-```mermaid
-flowchart TD
-    L1["Explore / Exploit<br/>How do we allocate?"]
-    L2["ICE Scoring<br/>In what order?"]
-    L3["Kano Classification<br/>Any guardrails?"]
-    L4["Dependency Pillars<br/>Can we build it now?"]
-    OUT["Sprint Commitment"]
-
-    L1 --> L2 --> L3 --> L4 --> OUT
-
-    style L1 fill:#2563EB,color:#fff
-    style L2 fill:#F59E0B,color:#000
-    style L3 fill:#DC2626,color:#fff
-    style L4 fill:#7C3AED,color:#fff
-    style OUT fill:#16A34A,color:#fff
-```
+![Mermaid Chart](../asset/04-dependency-graph_0.png)
 
 | Layer | Question | Without It |
 |---|---|---|
@@ -50,26 +35,7 @@ Every initiative in the backlog serves one of three strategic pillars. Within ea
 
 ## Trust Chain
 
-```mermaid
-flowchart TD
-    T1["🔵 Free Cancellation Badge<br/>P0 · ICE 729 · NOW<br/>XS effort"]
-    T2["🔵 Locally Curated Badge<br/>Enhancement<br/>P1 · ICE 392 · NOW<br/>S effort"]
-    T3["🔵 External Review Import<br/>P2 · ICE 280 · NEXT<br/>On Dev · CONTEX"]
-    T4["🔵 Platform Social Proof<br/>Counter<br/>P1 · ICE 448 · NOW<br/>M effort · PAYCOM"]
-    T5["🔵 Review Nationality Display<br/>P2 · ICE 336 · NEXT<br/>S effort"]
-
-    T1 --> T2
-    T2 --> T3
-    T3 --> T5
-    T4 -.->|"Needs booking<br/>volume data"| T4note["📊 Data dependency:<br/>requires operational<br/>booking volume"]
-
-    style T1 fill:#16A34A,color:#fff
-    style T2 fill:#2563EB,color:#fff
-    style T3 fill:#2563EB,color:#fff
-    style T4 fill:#2563EB,color:#fff
-    style T5 fill:#6B7280,color:#fff
-    style T4note fill:#FEF3C7,color:#92400E
-```
+![Mermaid Chart](../asset/04-dependency-graph_1.png)
 
 **Chain Logic:**
 - Free Cancel Badge (T1) is a standalone badge — no dependencies, maximum impact per effort
@@ -82,35 +48,7 @@ flowchart TD
 
 ## Conversion Chain
 
-```mermaid
-flowchart TD
-    C1["🟢 Move CTA to Top<br/>P1 · ICE 378 · NOW<br/>XS effort · PAYCOM"]
-    C2["🟢 Guest Checkout + SSO<br/>P1 · ICE 405 · NOW<br/>L effort · PAYCOM"]
-    C3["🟢 OTP Auth<br/>P2 · ICE 294 · NEXT<br/>M effort · PAYCOM"]
-    C4["🟢 Pre-activity Emails<br/>P1 · ICE 392 · NOW<br/>M effort"]
-    C5["🟢 Google Pay + Apple Pay<br/>P2 · ICE 256 · NOW<br/>L effort"]
-    C6["🟢 I8n Payment / 2C2P<br/>P2 · ICE 160 · NEXT<br/>L effort · PAYCOM"]
-    C7["🟢 Package Options<br/>P2 · ICE 294 · NEXT<br/>M effort · CONTEX"]
-    C8["🟢 My Booking<br/>P2 · ICE 245 · NEXT<br/>L effort · CONTEX"]
-    C9["🟢 Guest Purchase +<br/>My Booking for Guest<br/>P3 · ICE 144 · LATER<br/>XL effort · CONTEX"]
-
-    C1 --> C2
-    C2 --> C3
-    C2 --> C8
-    C2 --> C9
-    C5 --> C6
-    C4 -.->|"Needs confirmed<br/>booking flow"| C2
-
-    style C1 fill:#16A34A,color:#fff
-    style C2 fill:#16A34A,color:#fff
-    style C3 fill:#2563EB,color:#fff
-    style C4 fill:#2563EB,color:#fff
-    style C5 fill:#2563EB,color:#fff
-    style C6 fill:#6B7280,color:#fff
-    style C7 fill:#2563EB,color:#fff
-    style C8 fill:#6B7280,color:#fff
-    style C9 fill:#6B7280,color:#fff
-```
+![Mermaid Chart](../asset/04-dependency-graph_2.png)
 
 **Chain Logic:**
 - CTA Move (C1) is standalone — quick win, no architecture changes
@@ -125,22 +63,7 @@ flowchart TD
 
 ## Discovery Chain
 
-```mermaid
-flowchart TD
-    D0["🟣 Product Detail<br/>Improvements<br/>✅ Released · CONTEX"]
-    D1["🟣 Autocomplete +<br/>Search Filters<br/>P2 · ICE 210 · NEXT<br/>On Dev · CONTEX"]
-    D2["🟣 Discover Filter & Sort<br/>P2 · ICE 180 · NEXT<br/>On Dev · CONTEX"]
-    D3["🟣 Destination Pages<br/>P2 · ICE 175 · NEXT<br/>Design · CONTEX"]
-
-    D0 --> D1
-    D0 --> D2
-    D1 --> D3
-
-    style D0 fill:#16A34A,color:#fff
-    style D1 fill:#6B7280,color:#fff
-    style D2 fill:#6B7280,color:#fff
-    style D3 fill:#6B7280,color:#fff
-```
+![Mermaid Chart](../asset/04-dependency-graph_3.png)
 
 **Chain Logic:**
 - Product Detail Improvements (D0) is the foundation — already released, listing pages are baseline
@@ -153,28 +76,7 @@ flowchart TD
 
 Three initiatives depend on features from multiple chains. These are **junction points** that cannot start until their dependencies across chains are met.
 
-```mermaid
-flowchart LR
-    T3["🔵 External Review<br/>(Trust)"]
-    C4["🟢 Pre-activity Email<br/>(Conversion)"]
-    C2["🟢 SSO / Guest Checkout<br/>(Conversion)"]
-    C8["🟢 My Booking<br/>(Conversion)"]
-
-    X1["⭐ Post-Experience Email<br/>+ Review Request<br/>P2 · ICE 252 · NEXT"]
-    X2["⭐ Guest Purchase +<br/>My Booking for Guest<br/>P3 · ICE 144 · LATER"]
-
-    T3 -->|"Review system<br/>must exist"| X1
-    C4 -->|"Email infra<br/>must exist"| X1
-    C2 -->|"Guest auth<br/>must exist"| X2
-    C8 -->|"Booking mgmt<br/>must exist"| X2
-
-    style X1 fill:#F59E0B,color:#000
-    style X2 fill:#F59E0B,color:#000
-    style T3 fill:#2563EB,color:#fff
-    style C4 fill:#16A34A,color:#fff
-    style C2 fill:#16A34A,color:#fff
-    style C8 fill:#6B7280,color:#fff
-```
+![Mermaid Chart](../asset/04-dependency-graph_4.png)
 
 | Junction Initiative                    | Depends On                                                      | Earliest Start                                    |
 | -------------------------------------- | --------------------------------------------------------------- | ------------------------------------------------- |

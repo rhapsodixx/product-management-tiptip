@@ -17,18 +17,7 @@ Every product initiative must complete a Risk & Trade-off Analysis **before** a 
 
 > **Time commitment**: Each analysis should take **no more than 45 minutes** to complete. If it takes longer, the initiative brief is under-defined — go back to the brief first.
 
-```mermaid
-flowchart LR
-    A["Initiative Brief"] --> B["Risk & Trade-off<br/>Analysis (45 min)"]
-    B --> C{"Assumptions<br/>validated?"}
-    C -->|Yes| D["Write PRD"]
-    C -->|No| E["Run Validation<br/>Test First"]
-    E --> B
-
-    style B fill:#7C3AED,color:#fff
-    style D fill:#16A34A,color:#fff
-    style E fill:#F59E0B,color:#000
-```
+![Mermaid Chart](../asset/06-risk-analysis_0.png)
 
 > **Rule**: No PRD without a completed Risk & Trade-off Analysis. No exceptions — even for P0 items. P0 items get a **lightweight** analysis (30 min), not no analysis.
 
@@ -188,33 +177,7 @@ Mandatory for every initiative. Fill in names, not titles.
 
 ## The Central Trade-off: Conversion vs. Expansion
 
-```mermaid
-flowchart LR
-    subgraph "NOW — Fix the Funnel (70%)"
-        N1["Trust signals"]
-        N2["Payment methods"]
-        N3["Auth friction"]
-        N4["Checkout flow"]
-    end
-
-    subgraph "LATER — Open New Pipes (30%)"
-        L1["Localization"]
-        L2["New markets"]
-        L3["Loyalty"]
-    end
-
-    N1 --> CONVERT["Higher CVR"]
-    N2 --> CONVERT
-    N3 --> CONVERT
-    N4 --> CONVERT
-    CONVERT --> COMPOUND["Compound Effect:<br/>ALL future traffic converts better"]
-    COMPOUND --> L1
-    COMPOUND --> L2
-    COMPOUND --> L3
-
-    style CONVERT fill:#16A34A,color:#fff
-    style COMPOUND fill:#7C3AED,color:#fff
-```
+![Mermaid Chart](../asset/06-risk-analysis_1.png)
 
 > Every rupiah and every sprint hour spent on localization (Later) is a sprint not spent closing the trust and conversion gaps (Now) that make any new traffic — localized or not — convert.
 >
@@ -236,24 +199,7 @@ For a **~10 engineer team**, the opportunity cost is disproportionately high:
 
 ## How to Embed Risk Analysis into the PM Workflow
 
-```mermaid
-flowchart TD
-    A["New Initiative<br/>Enters Backlog"] --> B["Score ICE + Kano<br/>(Page 03)"]
-    B --> C["Assign Dependency Pillar<br/>(Page 04)"]
-    C --> D{"NOW or NEXT<br/>horizon?"}
-    D -->|"LATER"| E["Backlog —<br/>no analysis needed yet"]
-    D -->|"NOW / NEXT"| F["Complete Risk &<br/>Trade-off Analysis<br/>(this page)"]
-    F --> G{"Assumptions<br/>validated?"}
-    G -->|"Yes"| H["Write PRD"]
-    G -->|"No"| I["Run Validation Test"]
-    I --> J{"Test results<br/>support initiative?"}
-    J -->|"Yes"| H
-    J -->|"No"| K["Deprioritize or<br/>pivot approach"]
-
-    style F fill:#7C3AED,color:#fff
-    style H fill:#16A34A,color:#fff
-    style K fill:#DC2626,color:#fff
-```
+![Mermaid Chart](../asset/06-risk-analysis_2.png)
 
 | Step | When | Who | Output |
 |---|---|---|---|

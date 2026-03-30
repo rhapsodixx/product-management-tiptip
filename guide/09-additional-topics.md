@@ -100,27 +100,7 @@ The following topics are **not yet covered** in the playbook but would add signi
 
 ## Suggested Sequencing
 
-```mermaid
-flowchart TD
-    NOW["🟢 Immediate"]
-    NEXT["🟡 Next Quarter"]
-    SCALE["🟠 Before Scaling"]
-    LATER["🟣 Later"]
-
-    NOW --> T1["PRD Template<br/>& Standards"]
-    NEXT --> T2["Sprint Ceremonies"]
-    NEXT --> T3["Stakeholder Comms"]
-    NEXT --> T4["Feature Flags<br/>& Experiments"]
-    NEXT --> T6["Supply Quality"]
-    SCALE --> T5["Data Privacy"]
-    SCALE --> T7["Incident Response"]
-    LATER --> T8["Product-Led Growth"]
-
-    style NOW fill:#16A34A,color:#fff
-    style NEXT fill:#F59E0B,color:#000
-    style SCALE fill:#EA580C,color:#fff
-    style LATER fill:#7C3AED,color:#fff
-```
+![Mermaid Chart](../asset/09-additional-topics_0.png)
 
 > **Rule of thumb**: Build the topic playbook when the team is **about to need it**, not after the problem surfaces. If you're 1 sprint away from needing A/B testing, write the Experimentation Protocol now.
 

@@ -141,27 +141,7 @@ Apply these rules in Google Sheets via **Format → Conditional formatting**:
 
 When a new initiative is proposed, follow this process (cross-references Pages 02–04, 06):
 
-```mermaid
-flowchart TD
-    A["New Initiative"] --> B["Add row to tracker"]
-    B --> C["Map to journey stage<br/>(Page 01)"]
-    C --> D["Tag Explore/Exploit<br/>(Page 02)"]
-    D --> E["Classify Kano<br/>(Page 03)"]
-    E --> F["Score ICE<br/>(Page 03)"]
-    F --> G{"Basic + ICE < 300?"}
-    G -->|Yes| H["Apply floor = 300<br/>Flag ⚠️"]
-    G -->|No| I["Use raw ICE score"]
-    H --> J["Assign Priority + Horizon"]
-    I --> J
-    J --> K["Assign Pillar +<br/>Blocked By<br/>(Page 04)"]
-    K --> L{"NOW or NEXT?"}
-    L -->|Yes| M["Complete Risk Analysis<br/>(Page 06)"]
-    L -->|No| N["Backlog — review<br/>next quarter"]
-
-    style F fill:#F59E0B,color:#000
-    style H fill:#DC2626,color:#fff
-    style M fill:#7C3AED,color:#fff
-```
+![Mermaid Chart](../asset/08-backlog-tracker-guide_0.png)
 
 ### Step-by-Step
 

@@ -36,40 +36,14 @@ ICE tries to capture this via the Impact score, but PMs can underrate a "boring"
 
 > **Real example**: Google Pay/Apple Pay scores ICE = 256 (raw), which places it mid-P2. But it's Kano = Basic — foreign visitors without bank transfer access will abandon. The Kano floor keeps it in P1 consideration, which is the correct priority.
 
-```mermaid
-flowchart TD
-    L1["Explore / Exploit<br/>How do we allocate?"]
-    L2["ICE Scoring<br/>In what order?"]
-    L3["Kano Classification<br/>Any guardrails?"]
-    L4["Dependency Pillars<br/>Can we build it now?"]
-    OUT["Sprint Commitment"]
-
-    L1 --> L2 --> L3 --> L4 --> OUT
-
-    style L1 fill:#2563EB,color:#fff
-    style L2 fill:#F59E0B,color:#000
-    style L3 fill:#DC2626,color:#fff
-    style L4 fill:#7C3AED,color:#fff
-    style OUT fill:#16A34A,color:#fff
-```
+![Mermaid Chart](../asset/03-prioritization-framework_0.png)
 
 ### The ICE + Kano Combination
 
 **ICE** provides a numeric score (max 1,000) for rank-ordering.
 **Kano** adds a qualitative classification that answers: *Even if the ICE score is the same, how will users react to its presence or absence?*
 
-```mermaid
-flowchart LR
-    A["New Initiative"] --> B["Kano Classify"]
-    B --> C{"Basic?"}
-    C -->|Yes| D["ICE floor = 300<br/>(Must do regardless)"]
-    C -->|No| E["Score ICE normally"]
-    D --> F["Final Priority:<br/>P0-P3 + Horizon"]
-    E --> F
-
-    style D fill:#16A34A,color:#fff
-    style F fill:#7C3AED,color:#fff
-```
+![Mermaid Chart](../asset/03-prioritization-framework_1.png)
 
 ---
 
@@ -231,13 +205,7 @@ flowchart LR
 
 ## ICE Score Distribution
 
-```mermaid
-xychart-beta
-    title "ICE Score Distribution by Priority"
-    x-axis ["P0 (≥700)", "P1 (350-699)", "P2 (150-349)", "P3 (<150)"]
-    y-axis "Number of Initiatives" 0 --> 25
-    bar [1, 12, 23, 15]
-```
+![Mermaid Chart](../asset/03-prioritization-framework_2.png)
 
 > **Key Insight**: Only **1 initiative** reaches P0 (Free cancellation badge). The P1 tier is dominated by released items (7 of 12) — the team has instinctively built high-ICE items. The remaining **5 unshipped P1 items** should be the immediate sprint focus: Social proof counter, Guest checkout SSO, Locally Curated badge enhancement, Pre-activity emails, Move CTA to top.
 

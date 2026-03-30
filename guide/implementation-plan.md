@@ -34,12 +34,7 @@
 
 The playbook is built in **4 phases**, each producing a reviewable deliverable set. Each phase must be approved before the next begins.
 
-```mermaid
-graph LR
-    P1[Phase 1<br/>Foundation] -->|Review| P2[Phase 2<br/>Frameworks]
-    P2 -->|Review| P3[Phase 3<br/>AI & Operations]
-    P3 -->|Review| P4[Phase 4<br/>Tracker & Extras]
-```
+![Mermaid Chart](../asset/implementation-plan_0.png)
 
 ### Phase 1 — Foundation (Pages 00–02)
 

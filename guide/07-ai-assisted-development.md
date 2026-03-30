@@ -21,24 +21,7 @@ Different AI models excel at different cognitive tasks. Use the right model for 
 
 Each stage defines the AI role, recommended tools, and the agent skill the team should build.
 
-```mermaid
-flowchart LR
-    S1["1. Discovery<br/>& Research"]
-    S2["2. Ideation<br/>& Strategy"]
-    S3["3. Definition<br/>(PRD)"]
-    S4["4. Prototyping<br/>& Testing"]
-    S5["5. Execution<br/>& Delivery"]
-    S6["6. Post-Launch"]
-
-    S1 --> S2 --> S3 --> S4 --> S5 --> S6
-
-    style S1 fill:#2563EB,color:#fff
-    style S2 fill:#7C3AED,color:#fff
-    style S3 fill:#DC2626,color:#fff
-    style S4 fill:#F59E0B,color:#000
-    style S5 fill:#16A34A,color:#fff
-    style S6 fill:#0EA5E9,color:#fff
-```
+![Mermaid Chart](../asset/07-ai-assisted-development_0.png)
 
 ### Stage 1 — Discovery & Research
 

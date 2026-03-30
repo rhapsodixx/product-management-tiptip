@@ -36,14 +36,7 @@
 
 > **Takeaway**: SatuSatu averages 4.1/10 vs. the competitive mean of 8.0. The gap is widest in **Localization** (2 vs. 8.3 avg), **Social Proof** (3 vs. 7.8 avg), and **Catalog Depth** (4 vs. 8.5 avg). These are the conversion-killing gaps.
 
-```mermaid
-xychart-beta
-    title "UX Benchmark: SatuSatu vs. Competitors (1-10)"
-    x-axis ["Catalog", "Search", "Booking", "Trust", "Locale", "Mobile", "Social", "Price"]
-    y-axis "Score" 0 --> 10
-    bar [4, 4, 5, 4, 2, 6, 3, 5]
-    line [8.5, 8.0, 7.75, 7.75, 8.25, 7.75, 7.75, 8.0]
-```
+![Mermaid Chart](../asset/01-customer-journey-map_0.png)
 
 ---
 
@@ -62,14 +55,7 @@ xychart-beta
 | 5. Pre-Experience  | 7.0      | 8.0            | -1.0     |
 | 6. Post-Experience | 6.0      | 8.0            | -2.0     |
 
-```mermaid
-xychart-beta
-    title "Emotion Arc: SatuSatu vs. Competitor Benchmark"
-    x-axis ["Inspiration", "Research", "Evaluation", "Booking", "Pre-Exp", "Post-Exp"]
-    y-axis "Sentiment (1-10)" 0 --> 10
-    line [8, 6, 3.5, 4, 7, 6]
-    line [8, 7, 7, 7.5, 8, 8]
-```
+![Mermaid Chart](../asset/01-customer-journey-map_1.png)
 
 > **Critical Valley**: Stages 3–4 (Evaluation → Booking) show a **-3.5 point gap** versus competitors. This is where foreign visitors decide SatuSatu is "not trustworthy enough" and switch to Klook or GetYourGuide. All NOW-horizon initiatives target this valley.
 

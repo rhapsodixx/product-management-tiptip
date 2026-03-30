@@ -107,33 +107,7 @@ High-risk, high-reward. Only pursue once Exploit base is stable.
 
 ## Explore/Exploit Quadrant Visualization
 
-```mermaid
-quadrantChart
-    title Explore vs. Exploit — SatuSatu Initiative Map
-    x-axis "EXPLOIT (Proven)" --> "EXPLORE (Uncertain)"
-    y-axis "Low Impact" --> "High Impact"
-    quadrant-1 "Strategic Bets"
-    quadrant-2 "High-Certainty Wins"
-    quadrant-3 "Exploit Quick Wins"
-    quadrant-4 "Uncertain Experiments"
-    "Free Cancel Badge": [0.1, 0.92]
-    "Guest Checkout SSO": [0.15, 0.88]
-    "Google/Apple Pay": [0.15, 0.85]
-    "Social Proof Counter": [0.12, 0.8]
-    "Curated Badge Enhance": [0.2, 0.78]
-    "Pre-activity Emails": [0.18, 0.72]
-    "External Review": [0.22, 0.7]
-    "Autocomplete/Filters": [0.55, 0.7]
-    "Korean/Hindi i18n": [0.75, 0.82]
-    "Loyalty Credits": [0.85, 0.88]
-    "Referral Program": [0.7, 0.75]
-    "Mandarin i18n": [0.8, 0.72]
-    "WhatsApp Booking": [0.82, 0.5]
-    "Homepage Improvements": [0.1, 0.4]
-    "Blog Infra": [0.15, 0.35]
-    "Ops Tooling": [0.08, 0.3]
-    "llms.txt": [0.72, 0.3]
-```
+![Mermaid Chart](../asset/02-strategic-framing_0.png)
 
 ---
 
@@ -151,11 +125,7 @@ quadrantChart
 
 ### Recommended Ratio (Next 6 Months)
 
-```mermaid
-pie title "Target Sprint Allocation (Next 6 Months)"
-    "Exploit (70%)" : 70
-    "Explore (30%)" : 30
-```
+![Mermaid Chart](../asset/02-strategic-framing_1.png)
 
 | Allocation      | What It Means                                                                                                                                          | Examples                                                                                       |
 | --------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------ | ---------------------------------------------------------------------------------------------- |
@@ -206,22 +176,7 @@ For a **~10 engineer team**, the opportunity cost of exploration is disproportio
 
 Explore/Exploit is **Layer 1** of a four-layer prioritization model. It sets the strategic budget — but it doesn't answer "what do we build first?", "will users leave without this?", or "is this blocked by a dependency?" That's where Layers 2–4 come in.
 
-```mermaid
-flowchart TD
-    L1["Explore / Exploit<br/>How do we allocate?"]
-    L2["ICE Scoring<br/>In what order?"]
-    L3["Kano Classification<br/>Any guardrails?"]
-    L4["Dependency Pillars<br/>Can we build it now?"]
-    OUT["Sprint Commitment"]
-
-    L1 --> L2 --> L3 --> L4 --> OUT
-
-    style L1 fill:#2563EB,color:#fff
-    style L2 fill:#F59E0B,color:#000
-    style L3 fill:#DC2626,color:#fff
-    style L4 fill:#7C3AED,color:#fff
-    style OUT fill:#16A34A,color:#fff
-```
+![Mermaid Chart](../asset/02-strategic-framing_2.png)
 
 | Layer | What It Does | Without It |
 |---|---|---|
